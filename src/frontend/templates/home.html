@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h2>Plan for baby with confidence.</h2>
+  <p>
+    BumpBudget helps expecting and new parents understand costs, plan for maternity leave,
+    and track spending in one simple place.
+  </p>
+
+  <div class="cta">
+    {% if user.is_authenticated %}
+      <a class="btn" href="/dashboard/">Go to your dashboard</a>
+    {% else %}
+      <a class="btn" href="/register/">Join us today</a>
+      <a class="btn secondary" href="/login/">Log in</a>
+    {% endif %}
+  </div>
+</section>
+
+<section class="grid-3">
+  <div class="card">
+    <h3>Budgeting</h3>
+    <p>Create a simple monthly plan and track where your money goes.</p>
+  </div>
+
+  <div class="card">
+    <h3>Milestones</h3>
+    <p>See upcoming pregnancy stages and common costs that come with them.</p>
+  </div>
+
+  <div class="card">
+    <h3>Forecasts</h3>
+    <p>Estimate future expenses and plan ahead for reduced income during leave.</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create an account</h2>
+
+{% if form.errors %}
+  <div class="error-box">
+    <p><strong>Please fix the errors below:</strong></p>
+    {{ form.errors }}
+  </div>
+{% endif %}
+
+<form method="post" class="form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn" type="submit">Sign up</button>
+</form>
+{% endblock %}

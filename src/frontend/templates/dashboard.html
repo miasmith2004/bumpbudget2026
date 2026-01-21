@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="dashboard">
+
+  <!-- Welcome header -->
+  <h2>Welcome, {{ user.username }} </h2>
+  <p class="intro">
+    This is your personal financial dashboard for pregnancy and early parenthood.
+  </p>
+
+  <!-- Quick profile summary -->
+  <div class="profile-summary">
+    <p><strong>Due date:</strong> {{ profile.due_date }}</p>
+    <p><strong>First child:</strong>
+      {% if profile.first_child %}Yes{% else %}No{% endif %}
+    </p>
+  </div>
+
+  <!-- Summary cards -->
+  <div class="summary-grid">
+    <div class="card">
+      <h3>Monthly Income</h3>
+      <p class="amount">€{{ monthly_income }}</p>
+      {% if profile.partner_income %}
+        <p class="note">Includes partner income</p>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <h3>Total Expenses</h3>
+      <p class="amount">€{{ total_expenses }}</p>
+      <p class="note">Temporary sample value</p>
+    </div>
+
+    <div class="card">
+      <h3>Remaining</h3>
+      {% if remaining >= 0 %}
+        <p class="amount positive">€{{ remaining }}</p>
+        <p class="note">You’re on track this month</p>
+      {% else %}
+        <p class="amount negative">€{{ remaining }}</p>
+        <p class="note">You’re over budget — try adjusting spend</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Chart section -->
+  <section class="chart-section">
+    <h3>Spending Breakdown</h3>
+    <p class="small">
+      This chart will become fully personalised once expenses are connected to your account.
+    </p>
+
+    <div class="chart-container">
+      <canvas id="spendingChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Upcoming costs -->
+  <section class="upcoming">
+    <h3>Upcoming Costs</h3>
+    <p class="small">
+      Example upcoming costs (these will come from milestones + your saved expenses later).
+    </p>
+    <ul>
+      <li>GP appointment – €60</li>
+      <li>Baby essentials – €120</li>
+      <li>Childcare deposit – €300</li>
+    </ul>
+  </section>
+
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Contact Us</h2>
+<p>If you have questions or feedback, get in touch.</p>
+
+<form class="form">
+  <label>Name</label>
+  <input type="text" placeholder="Your name">
+
+  <label>Email</label>
+  <input type="email" placeholder="you@example.com">
+
+  <label>Message</label>
+  <textarea rows="5" placeholder="Write your message..."></textarea>
+
+  <button class="btn" type="submit">Send</button>
+</form>
+
+<p class="note">
+  (For the academic version, this form can be non-functional and used to demonstrate UI structure.)
+</p>
+{% endblock %}

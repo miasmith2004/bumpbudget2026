@@ -1,0 +1,87 @@
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card {
+  border: 1px solid #e6e6e6;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.amount {
+  font-size: 1.6rem;
+  margin: 8px 0 0;
+}
+
+.amount.positive {
+  color: #2f8f2f;
+}
+
+.chart-container {
+  max-width: 400px;   /* controls width */
+  margin: 0 auto;     /* center it */
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+
+.upcoming ul {
+  padding-left: 18px;
+}
+
+
+.site-nav a { margin-right: 12px; }
+
+.hero { padding: 18px 0 26px; }
+.cta { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #2d6cdf;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.btn.secondary { background: #555; }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.form input, .form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.note { color: #666; font-size: 0.9rem; margin-top: 12px; }
+.error-box{
+  background:#ffe6e6;
+  border:1px solid #cc0000;
+  padding:12px;
+  border-radius:8px;
+  margin:12px 0;
+}
