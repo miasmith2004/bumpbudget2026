@@ -27,6 +27,24 @@ def faq(request):
 def contact(request):
     return render(request, "contact.html")
 
+def dashboard(request):
+    return render(request, "dashboard.html")
+
+def budget(request):
+    return render(request, "budget.html")
+
+def goals(request):
+    return render(request, "goals.html")
+
+def resources(request):
+    return render(request, "resources.html")
+
+def tracker(request):
+    return render(request, "tracker.html")
+
+def timeline(request):
+    return render(request, "timeline.html")
+
 @login_required
 def dashboard(request):
     profile = UserProfile.objects.filter(user=request.user).first()
